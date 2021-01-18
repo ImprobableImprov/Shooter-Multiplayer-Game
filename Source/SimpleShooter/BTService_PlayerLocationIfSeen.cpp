@@ -7,10 +7,11 @@
 #include "GameFramework/Pawn.h"
 #include "AIController.h"
 #include "ShooterCharacter.h"
+#include "GameFramework/GameStateBase.h"
 
 UBTService_PlayerLocationIfSeen::UBTService_PlayerLocationIfSeen()
 {
-	NodeName = "Update PLayer Location If Seen"; 
+	NodeName = "Update Player Location If Seen"; 
 }
 
 void UBTService_PlayerLocationIfSeen::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
@@ -18,6 +19,9 @@ void UBTService_PlayerLocationIfSeen::TickNode(UBehaviorTreeComponent& OwnerComp
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
 	APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+
+	//UGameplayStatics::GetGameState(GetWorld())->PlayerArray;
+	
 	if(PlayerPawn == nullptr) return;
 	if(OwnerComp.GetAIOwner() == nullptr) return;
 
