@@ -5,13 +5,24 @@
 
 #include "EngineUtils.h"
 #include "ShooterAIController.h"
+#include "ShooterCharacter.h"
 
 void AKillEmAllGameMode::PawnKilled(APawn* PawnKilled)
 {
 	Super::PawnKilled(PawnKilled);
+
+	bool PlayersDead = true;
 	
-	APlayerController* PlayerController = Cast<APlayerController>(PawnKilled->GetController());
-	if(PlayerController != nullptr)
+	//APlayerController* PlayerController = Cast<APlayerController>(PawnKilled->GetController());
+	//if(PlayerController != nullptr)
+	//	EndGame(false);
+
+	for (AShooterCharacter *PlayerController : TActorRange<AShooterCharacter>(GetWorld()))
+	{
+		if(!PlayerController->IsDead()) PlayersDead = false;
+	}
+
+	if(PlayersDead)
 		EndGame(false);
 	
 	for (AShooterAIController *AIController : TActorRange<AShooterAIController>(GetWorld()))

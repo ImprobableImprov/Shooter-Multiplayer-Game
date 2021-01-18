@@ -49,7 +49,7 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 	float MaxHealth = 100;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Replicated)
 	float Health;
 
 	UPROPERTY(EditAnywhere)

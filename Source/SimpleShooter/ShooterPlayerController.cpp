@@ -23,7 +23,9 @@ void AShooterPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner
 	{
 		UUserWidget *LoseScreen = CreateWidget(this, LoseScreenClass);
 		if(LoseScreen != nullptr)
+		{
 			LoseScreen->AddToViewport();
+		}
 	}
 
 	GetWorldTimerManager().SetTimer(RestartTimer, this, &APlayerController::RestartLevel, RestartDelay);
@@ -32,18 +34,14 @@ void AShooterPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner
 void AShooterPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	HUD = CreateWidget(this, HUDClass);
+	if(IsLocalPlayerController())
+		HUD = CreateWidget(this, HUDClass);
 	
 	if(HUD != nullptr && GetWorld()->GetName() != TEXT("MainMenu"))
 	{
 		HUD->AddToViewport();
 	}
 		
-}
-
-AShooterPlayerController::AShooterPlayerController()
-{	
-
 }
 
 
