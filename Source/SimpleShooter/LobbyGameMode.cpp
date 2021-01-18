@@ -18,7 +18,7 @@ void ALobbyGameMode::StartGame()
 
 	bUseSeamlessTravel = true;
 		
-	World->ServerTravel("/Game/PuzzlePlatforms/Maps/Game?listen");
+	World->ServerTravel("/Game/Sandbox?listen");
 }
 
 void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)

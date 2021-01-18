@@ -9,13 +9,14 @@
   <component name="ChangeListManager">
     <list default="true" id="42c6b711-4d9b-4659-9320-ad998c29366c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SimpleShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SimpleShooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Character/AI/BP_ShooterCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Character/AI/BP_ShooterCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Sandbox.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Sandbox.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/Gun.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/Gun.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/MenuSystem/MainMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/MenuSystem/MainMenu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Character/BP_PlayerShooterCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Character/BP_PlayerShooterCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/PuzzlePlatforms/Maps/Lobby.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/PuzzlePlatforms/Maps/Lobby.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/KillEmAllGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/KillEmAllGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/LobbyGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/LobbyGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/PuzzlePlatformsGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/PuzzlePlatformsGameInstance.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/ShooterPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/ShooterPlayerController.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +30,9 @@
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Editor/UMGEditor/Private/Nodes/K2Node_CreateWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/GameplayStatics.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/GameInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Controller.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/PlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
@@ -39,16 +42,18 @@
       <option value="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocation.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocationIfSeen.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/SimpleShooterGameModeBase.h" />
-      <option value="$PROJECT_DIR$/Source/SimpleShooter/KillEmAllGameMode.cpp" />
-      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterPlayerController.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterPlayerController.h" />
       <option value="$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" />
       <option value="$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" />
-      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/Gun.h" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/MenuSystem/MainMenu.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/KillEmAllGameMode.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/LobbyGameMode.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/PuzzlePlatformsGameInstance.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterPlayerController.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.h" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nAcCFONrNTinWu7W7093sLIX9u" />
@@ -180,7 +185,7 @@
       <updated>1610836208058</updated>
       <workItem from="1610836240922" duration="1248000" />
       <workItem from="1610928705944" duration="7193000" />
-      <workItem from="1610938155756" duration="22827000" />
+      <workItem from="1610938155756" duration="27751000" />
     </task>
     <servers />
   </component>

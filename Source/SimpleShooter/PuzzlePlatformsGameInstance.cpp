@@ -132,7 +132,7 @@ void UPuzzlePlatformsGameInstance::OnJoinSessionComplete(FName SessionName, EOnJ
     UEngine* Engine = GetEngine();
     if(!ensure(Engine != nullptr)) return;
     
-    Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, FString::Printf(TEXT("Joining %s"), *Address));
+    //Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, FString::Printf(TEXT("Joining %s"), *Address));
     
     APlayerController* PlayerController = GetPrimaryPlayerController();
     if(!ensure(PlayerController != nullptr)) return;
@@ -181,12 +181,12 @@ void UPuzzlePlatformsGameInstance::OnCreateSessionComplete(FName SessionName, bo
     UEngine* Engine = GetEngine();
     if(!ensure(Engine != nullptr)) return;
 
-    Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, TEXT("Hosting"));
+    //Engine->AddOnScreenDebugMessage(0, 5, FColor::Green, TEXT("Hosting"));
 
     UWorld* World = GetWorld();
     if(!ensure(World != nullptr)) return;
 
-    World->ServerTravel("/Game/Sandbox?listen");
+    World->ServerTravel("/Game/PuzzlePlatforms/Maps/Lobby?listen");
 }
 
 void UPuzzlePlatformsGameInstance::Join(uint32 Index)

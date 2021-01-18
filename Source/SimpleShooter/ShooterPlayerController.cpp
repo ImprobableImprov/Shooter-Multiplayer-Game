@@ -37,7 +37,7 @@ void AShooterPlayerController::BeginPlay()
 	if(IsLocalPlayerController())
 		HUD = CreateWidget(this, HUDClass);
 	
-	if(HUD != nullptr && GetWorld()->GetName() != TEXT("MainMenu"))
+	if(HUD != nullptr && GetWorld()->GetName() == TEXT("Sandbox"))
 	{
 		HUD->AddToViewport();
 	}

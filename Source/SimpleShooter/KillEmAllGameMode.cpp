@@ -6,6 +6,7 @@
 #include "EngineUtils.h"
 #include "ShooterAIController.h"
 #include "ShooterCharacter.h"
+#include "ShooterPlayerController.h"
 
 void AKillEmAllGameMode::PawnKilled(APawn* PawnKilled)
 {
@@ -36,7 +37,7 @@ void AKillEmAllGameMode::PawnKilled(APawn* PawnKilled)
 
 void AKillEmAllGameMode::EndGame(bool bIsPlayerWinner)
 {
-	for(AController* Controller : TActorRange<AController>(GetWorld()))
+	for(AShooterPlayerController* Controller : TActorRange<AShooterPlayerController>(GetWorld()))
 	{
 		bool bIsWinner = (Controller->IsPlayerController() == bIsPlayerWinner);
 		Controller->GameHasEnded(Controller->GetPawn(), bIsWinner);

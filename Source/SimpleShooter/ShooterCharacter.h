@@ -21,17 +21,6 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastTakeDamage();
-
-	UFUNCTION(Server, Reliable, WithValidation)
-	void ServerTakeDamage();
-	
-	void MulticastTakeDamage_Implementation();
-	void ServerTakeDamage_Implementation();
-	bool ServerTakeDamage_Validate();
-	void OnTakeDamage();
-
 public:	
 
 	UFUNCTION(BlueprintPure)

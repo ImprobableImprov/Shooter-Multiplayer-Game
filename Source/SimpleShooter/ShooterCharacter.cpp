@@ -38,40 +38,6 @@ void AShooterCharacter::BeginPlay()
 	Health = MaxHealth;
 }
 
-void AShooterCharacter::MulticastTakeDamage_Implementation()
-{
-	if (Health - 10.0f > 0.0f)
-	{
-		Health -= 10.0f;
-	}
-	else
-	{
-		Health = 0.0f;
-	}
-}
- 
-void AShooterCharacter::ServerTakeDamage_Implementation()
-{
-	MulticastTakeDamage();
-}
- 
-bool AShooterCharacter::ServerTakeDamage_Validate()
-{
-	return true;
-}
- 
-void AShooterCharacter::OnTakeDamage()
-{
-	if (HasAuthority())
-	{
-		MulticastTakeDamage();
-	}
-	else
-	{
-		ServerTakeDamage();
-	}
-}
-
 bool AShooterCharacter::IsDead() const
 {
 	return Health <= 0;
