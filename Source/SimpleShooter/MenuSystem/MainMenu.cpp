@@ -20,7 +20,8 @@ UMainMenu::UMainMenu(const FObjectInitializer& ObjectInitializer)
     ConstructorHelpers::FClassFinder<UUserWidget> ServerRowBPClass(TEXT("/Game/MenuSystem/WBP_ServerRow"));
     if(!ensure(ServerRowBPClass.Class != nullptr)) return;
     
-    ServerRowClass = ServerRowBPClass.Class;}
+    ServerRowClass = ServerRowBPClass.Class;
+}
 
 void UMainMenu::SetServerList(TArray<FServerData> ServerNames)
 {   
@@ -81,7 +82,6 @@ void UMainMenu::HostServer()
     {
         FString ServerName = ServerHostName->Text.ToString();
         MenuInterface->Host(ServerName);
-
     }
 }
 

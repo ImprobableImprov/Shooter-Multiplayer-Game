@@ -5,6 +5,7 @@
 
 #include "Components/SkeletalMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Engine/DemoNetDriver.h"
 //#include "DrawDebugHelpers.h"
 //#include "ControlPointMeshActor.h"
 
@@ -44,26 +45,22 @@ void AGun::Tick(float DeltaTime)
 
 void AGun::PullTrigger()
 {
-	if(HasAuthority())
-	{
-		UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
-		UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
+	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
+	UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
 
-		FHitResult Hit;
-		FVector ShotDirection;
-	
-		if(IsHitByGunTrace(Hit, ShotDirection))
+	FHitResult Hit;
+	FVector ShotDirection;
+
+	if(IsHitByGunTrace(Hit, ShotDirection))
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
+		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location);
+		AActor* HitActor = Hit.GetActor();
+		if(HitActor != nullptr)
 		{
-			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
-			UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location);
-		
-			AActor* HitActor = Hit.GetActor();
-			if(HitActor != nullptr)
-			{
-				FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
-				AController *OwnerController = GetOwnerController();
-				HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
-			}
+			FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
+			AController *OwnerController = GetOwnerController();
+			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
 		}
 	}
 }
@@ -92,4 +89,11 @@ AController* AGun::GetOwnerController() const
 	if(OwnerPawn == nullptr) return nullptr;
 
 	return OwnerPawn->GetController();
+}
+
+void AGun::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(AGun, Damage);
 }

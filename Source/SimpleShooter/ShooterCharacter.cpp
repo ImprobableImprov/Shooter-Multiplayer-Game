@@ -27,6 +27,8 @@ void AShooterCharacter::BeginPlay()
 		SetReplicates(true);
 		SetReplicateMovement(true);
 	}
+
+	bReplicates = true;
 	
 	Gun = GetWorld()->SpawnActor<AGun>(GunClass);
 	GetMesh()->HideBoneByName(TEXT("weapon_r"), EPhysBodyOp::PBO_None);
@@ -34,6 +36,40 @@ void AShooterCharacter::BeginPlay()
 	Gun->SetOwner(this);
 
 	Health = MaxHealth;
+}
+
+void AShooterCharacter::MulticastTakeDamage_Implementation()
+{
+	if (Health - 10.0f > 0.0f)
+	{
+		Health -= 10.0f;
+	}
+	else
+	{
+		Health = 0.0f;
+	}
+}
+ 
+void AShooterCharacter::ServerTakeDamage_Implementation()
+{
+	MulticastTakeDamage();
+}
+ 
+bool AShooterCharacter::ServerTakeDamage_Validate()
+{
+	return true;
+}
+ 
+void AShooterCharacter::OnTakeDamage()
+{
+	if (HasAuthority())
+	{
+		MulticastTakeDamage();
+	}
+	else
+	{
+		ServerTakeDamage();
+	}
 }
 
 bool AShooterCharacter::IsDead() const
@@ -50,7 +86,6 @@ float AShooterCharacter::GetHealthPercent() const
 void AShooterCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Called to bind functionality to input
@@ -77,7 +112,7 @@ float AShooterCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 	DamageToApply = FMath::Min(Health, DamageToApply);
 	Health -= DamageToApply;
 	
-	UE_LOG(LogTemp, Warning, TEXT("Health Left: %f"), Health);
+	//UE_LOG(LogTemp, Warning, TEXT("Health Left: %f"), Health);
 
 	if(IsDead())
 	{

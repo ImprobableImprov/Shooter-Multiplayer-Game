@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
+class AShooterCharacter;
 UCLASS()
 class SIMPLESHOOTER_API AGun : public AActor
 {
@@ -46,12 +47,12 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxRange = 1000;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Replicated)
 	float Damage = 10;
 
 
 	bool IsHitByGunTrace(FHitResult& Hit, FVector& ShotDirection);
 
 	AController* GetOwnerController() const;
-	
+
 };

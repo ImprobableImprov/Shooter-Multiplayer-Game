@@ -21,6 +21,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastTakeDamage();
+
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerTakeDamage();
+	
+	void MulticastTakeDamage_Implementation();
+	void ServerTakeDamage_Implementation();
+	bool ServerTakeDamage_Validate();
+	void OnTakeDamage();
+
 public:	
 
 	UFUNCTION(BlueprintPure)
@@ -36,6 +47,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+	
+	
 	
 	void Shoot();
 
