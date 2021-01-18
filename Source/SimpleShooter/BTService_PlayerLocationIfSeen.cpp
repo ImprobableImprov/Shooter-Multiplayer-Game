@@ -8,6 +8,7 @@
 #include "AIController.h"
 #include "ShooterCharacter.h"
 #include "GameFramework/GameStateBase.h"
+#include "GameFramework/PlayerState.h"
 
 UBTService_PlayerLocationIfSeen::UBTService_PlayerLocationIfSeen()
 {
@@ -18,21 +19,40 @@ void UBTService_PlayerLocationIfSeen::TickNode(UBehaviorTreeComponent& OwnerComp
 {
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
-	APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	//APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 
-	//UGameplayStatics::GetGameState(GetWorld())->PlayerArray;
+	// UGameplayStatics::GetGameState(GetWorld())->PlayerArray;
 	
-	if(PlayerPawn == nullptr) return;
+	//if(PlayerPawn == nullptr) return;
 	if(OwnerComp.GetAIOwner() == nullptr) return;
 
-	if(OwnerComp.GetAIOwner()->LineOfSightTo(PlayerPawn))
+	bool isFound = false;
+
+	for (APlayerState* Player : UGameplayStatics::GetGameState(GetWorld())->PlayerArray)
 	{
-		OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), PlayerPawn);
+		APawn* PlayerPawn = Player->GetPawn();
+		if(PlayerPawn == nullptr) continue;
+		
+		if(OwnerComp.GetAIOwner()->LineOfSightTo(PlayerPawn))
+		{
+			OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), PlayerPawn);
+			isFound = true;
+		}
 	}
-	else
+
+	if(!isFound)
 	{
 		OwnerComp.GetBlackboardComponent()->ClearValue(GetSelectedBlackboardKey());
 	}
+	
+	// if(OwnerComp.GetAIOwner()->LineOfSightTo(PlayerPawn))
+	// {
+	// 	OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), PlayerPawn);
+	// }
+	// else
+	// {
+	// 	OwnerComp.GetBlackboardComponent()->ClearValue(GetSelectedBlackboardKey());
+	// }
 
 
 }

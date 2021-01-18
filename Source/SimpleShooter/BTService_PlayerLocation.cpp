@@ -3,8 +3,10 @@
 
 #include "BTService_PlayerLocation.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/GameStateBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerState.h"
 
 UBTService_PlayerLocation::UBTService_PlayerLocation()
 {
@@ -15,8 +17,16 @@ void UBTService_PlayerLocation::TickNode(UBehaviorTreeComponent& OwnerComp, uint
 {
 	Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
-	APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-	if(PlayerPawn == nullptr) return;
+	//APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+	//if(PlayerPawn == nullptr) return;
 
-	OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
+	for (APlayerState* Player : UGameplayStatics::GetGameState(GetWorld())->PlayerArray)
+	{
+		AActor* PlayerPawn = Player->GetPawn();
+		if(PlayerPawn == nullptr) continue;
+
+		OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
+	}
+
+	// OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
 }

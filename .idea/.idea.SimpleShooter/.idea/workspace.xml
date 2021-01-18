@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42c6b711-4d9b-4659-9320-ad998c29366c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SimpleShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SimpleShooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Character/AI/BP_ShooterAIController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Character/AI/BP_ShooterAIController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MenuSystem/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MenuSystem/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MenuSystem/WBP_ServerRow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MenuSystem/WBP_ServerRow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Sandbox.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Sandbox.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocationIfSeen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocationIfSeen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +23,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../ProgramFiles/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocation.cpp" />
       <option value="$PROJECT_DIR$/Source/SimpleShooter/BTService_PlayerLocationIfSeen.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/ShooterCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/SimpleShooter/Gun.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1nAcCFONrNTinWu7W7093sLIX9u" />
@@ -148,6 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610836208058</updated>
       <workItem from="1610836240922" duration="1248000" />
+      <workItem from="1610928705944" duration="7005000" />
     </task>
     <servers />
   </component>

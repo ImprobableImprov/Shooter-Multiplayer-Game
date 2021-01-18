@@ -27,6 +27,12 @@ AGun::AGun()
 void AGun::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (HasAuthority())
+	{
+		SetReplicates(true);
+		SetReplicateMovement(true);
+	}
 }
 
 
@@ -38,23 +44,26 @@ void AGun::Tick(float DeltaTime)
 
 void AGun::PullTrigger()
 {
-	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
-	UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
-
-	FHitResult Hit;
-	FVector ShotDirection;
-	
-	if(IsHitByGunTrace(Hit, ShotDirection))
+	if(HasAuthority())
 	{
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
-		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location);
-		
-		AActor* HitActor = Hit.GetActor();
-		if(HitActor != nullptr)
+		UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
+		UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
+
+		FHitResult Hit;
+		FVector ShotDirection;
+	
+		if(IsHitByGunTrace(Hit, ShotDirection))
 		{
-			FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
-			AController *OwnerController = GetOwnerController();
-			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection.Rotation());
+			UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, Hit.Location);
+		
+			AActor* HitActor = Hit.GetActor();
+			if(HitActor != nullptr)
+			{
+				FPointDamageEvent DamageEvent(Damage, Hit, ShotDirection, nullptr);
+				AController *OwnerController = GetOwnerController();
+				HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+			}
 		}
 	}
 }
