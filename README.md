@@ -1,1 +1,1 @@
-Code file located in the "Sorce" Directory.
+Code file located in the "Sorce/SimpleShooter" Directory.
