@@ -1,6 +1,11 @@
 # Multiplayer Shooter Game
 
-A little info about your project and/ or overview that explains what the project is about.
+A multiplayer game that allows players to easily play accross the internet on multiple machine with friends. The game currently allows for up to 5 players with one playable level. The game is currently fully playable with additional features being added.
+
+* Multiplayer functionality over the internet without having to use any technical knowledge and maximize ease of access to average users
+* Character and tool abilities and movement
+* AI enemies to follow and attack players as they appear within the enemies point of view
+* Short shooter style gameplay
 
 # Motivation
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
