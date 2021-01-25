@@ -1,3 +1,3 @@
 # Multiplayer Shooter Game
 
-Code file located in the "Sorce/SimpleShooter" Directory.
+Code file located in the "Source/SimpleShooter" Directory.
