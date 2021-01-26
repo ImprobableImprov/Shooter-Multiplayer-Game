@@ -20,8 +20,10 @@ This game was created in large because of my passion for video games and program
 ![Headshot](/img/Headshot-Before.png "Player shooting another player")
 ![Main Menu](/img/MainMenu.png "Main Menu")
 ![Host Menu](/img/HostMenu-NoText.png "Host Menu without any text")
+![Join Menu](/img/JoinGame.png "Join Game Menu")
+![Multiplayer Lineup](/img/Multiplayer-LineUp.png "Five players line up, ready to attack")
 
-To see more information about the game, including videos and images of gameplay, check out [my website](https://www.theshumaker.com/).
+**To see more** information about the game, including videos and images of gameplay, check out [my website](https://www.theshumaker.com/).
 
 # Tech/framework used
 
