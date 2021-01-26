@@ -17,7 +17,7 @@ This game was created in large because of my passion for video games and program
 * AI that follows a decision tree
 
 # Screenshots
-![Headshot](/img/Headshot-Before.png "Player shooting another player")
+![Headshot](/img/Headshot-PullTrigger.png "Player shooting another player")
 ![Main Menu](/img/MainMenu.png "Main Menu")
 ![Host Menu](/img/HostMenu-NoText.png "Host Menu without any text")
 ![Join Menu](/img/JoinGame.png "Join Game Menu")
