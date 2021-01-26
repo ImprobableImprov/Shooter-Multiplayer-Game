@@ -17,7 +17,7 @@ This game was created in large because of my passion for video games and program
 * AI that follows a decision tree
 
 # Screenshots
-![Screenshot 1](/wp.png "Title")
+![AI Shooting](/img/AI-Shoot.PNG "Title")
 
 To see more information about the game, including videos and images of gameplay, check out [My Website](https://www.theshumaker.com/).
 
