@@ -17,11 +17,11 @@ This game was created in large because of my passion for video games and program
 * AI that follows a decision tree
 
 # Screenshots
-![AI Shooting](/img/AI-Shoot.png "Insert Title Here")
+![Headshot](/img/Headshot-Before.png "Player shooting another player")
+![Main Menu](/img/MainMenu.png "Main Menu")
+![Host Menu](/img/HostMenu-NoText.png "Host Menu without any text")
 
-To see more information about the game, including videos and images of gameplay, check out [My Website](https://www.theshumaker.com/).
-
-https://www.theshumaker.com/
+To see more information about the game, including videos and images of gameplay, check out [my website](https://www.theshumaker.com/).
 
 # Tech/framework used
 
@@ -39,10 +39,7 @@ https://www.theshumaker.com/
 * Lobby system to allow players to wait for others to join
 * AI enemies that patrol the area and follow players within thier sight
 * AI enemies who lose sight of players will search the area, but return to thier patrol if they are not found
-* The game ends and a winner is determined when all players or all enemies are defeated 
-
-# Code Example
-
+* The game ends and a winner is determined when all players or all enemies are defeated
 
 # Credits
 The Character and Enemy characters use the [Paragon Wraith](https://www.unrealengine.com/marketplace/en-US/product/paragon-wraith) from Epic Games.
