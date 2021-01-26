@@ -8,10 +8,19 @@ A multiplayer game that allows players to easily play accross the internet on mu
 * Short shooter style gameplay
 
 # Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
+This game was created in large because of my passion for video games and programming, and also my interest in developing my own skills in software development. I learned quite a bit during the development of this project and continue to learn as the game developes further.
+
+* Working with a Client-Server architecture while insuring that gameplay is smooth and consistent accross all players
+* Creating easy to use UI that is simple and easy to understand while also being quick and responsive 
+* Natural and seemless animations for humanoid movement
+* AI that follows a decision tree
 
 # Screenshots
 ![Screenshot 1](/wp.png "Title")
+
+To see more information about the game, including videos and images of gameplay, check out [My Website](https://www.theshumaker.com/).
+
+https://www.theshumaker.com/
 
 # Tech/framework used
 
