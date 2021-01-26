@@ -10,10 +10,10 @@ A multiplayer game that allows players to easily play accross the internet on mu
 # Motivation
 This game was created in large because of my passion for video games and programming, and also my interest in developing my own skills in software development. I learned quite a bit during the development of this project and continue to learn as the game developes further.
 
-* Working with a Client-Server architecture while insuring that gameplay is smooth and consistent accross all players
+* Working with a Client-Server architecture while insuring that gameplay is smooth and consistent across all players
 * Traveling multiple players across different levels and maps
 * Creating easy to use UI that is simple and easy to understand while also being quick and responsive 
-* Natural and seemless animations for humanoid movement
+* Natural and seamless animations for humanoid movement
 * AI that follows a decision tree
 
 # Screenshots
