@@ -11,22 +11,27 @@ A multiplayer game that allows players to easily play accross the internet on mu
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
 
 # Screenshots
-![Alt](/wp.png "Title")
+![Screenshot 1](/wp.png "Title")
 
 # Tech/framework used
-Ex. -
 
 **Built with**
-* Electron
+* C++
 
 # Features
-What makes your project stand out?
+
+* Natural human movement from Players and AI enemies
+* A laser weapon that damages characters hit by its blast
+* HUD displaying character health
+* Pre-game menus to simply connect players to together
+* In-game menus to allow users to leave a game when they wish
+* Lobby system to allow players to wait for others to join
+* AI enemies that patrol the area and follow players within thier sight
+* AI enemies who lose sight of players will search the area, but return to thier patrol if they are not found
+* The game ends and a winner is determined when all players or all enemies are defeated 
 
 # Code Example
-Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+
 
 # Credits
-
 The Character and Enemy characters use the [Paragon Wraith](https://www.unrealengine.com/marketplace/en-US/product/paragon-wraith) from Epic Games.
-
-
